@@ -11,12 +11,11 @@ import dagger.Module;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.support.AndroidSupportInjectionModule;
 
-@Component(modules = {MyModule.class, AndroidInjectionModule.class,AndroidSupportInjectionModule.class, YourActivityModule.class, YourFragmentModule.class})
+@Component(modules = {MyModule.class, AndroidInjectionModule.class,AndroidSupportInjectionModule.class})
 @Singleton
 public interface MyComponent {
     void inject(MainActivity activity);
     void inject(ItemFragment fragment);
-    void inject(AndroidDaggerApplication androidDaggerApplication);
 
 
     Book getBook();
