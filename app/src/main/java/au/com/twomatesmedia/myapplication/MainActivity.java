@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements  ItemFragment.OnL
     @Inject
     ItemFragment itemFragment2;
 
+    @Inject
+    Bar bar;
+
     private String TAG = MainActivity.class.getName();
 
     @Override
