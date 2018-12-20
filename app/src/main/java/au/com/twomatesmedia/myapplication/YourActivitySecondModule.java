@@ -7,13 +7,13 @@ import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 
 @Module(subcomponents = {
-        YourActivitySubcomponentSecond.class})
+        YourSecondActivitySubcomponent.class})
 abstract class YourActivitySecondModule {
 
 
     @Binds
     @IntoMap
-    @ClassKey(DaggerTestSecondActivity.class)
-    abstract AndroidInjector.Factory<?> bindYourActivityInjectorFactorySecond(YourActivitySubcomponentSecond.Builder builder);
+    @ClassKey(DaggerSecondActivity.class)
+    abstract AndroidInjector.Factory<?> bindYourActivityInjectorFactorySecond(YourSecondActivitySubcomponent.Builder builder);
 
 }

@@ -11,15 +11,13 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class AndroidDaggerApplication extends Application implements HasSupportFragmentInjector, HasActivityInjector
-        {
+public class DaggerApplication extends Application implements HasSupportFragmentInjector, HasActivityInjector {
 
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
 
-   @Inject
-   DispatchingAndroidInjector<Fragment> dispatchingFragmentInjector;
-
+    @Inject
+    DispatchingAndroidInjector<Fragment> dispatchingFragmentInjector;
 
 
     @Override
@@ -33,15 +31,9 @@ public class AndroidDaggerApplication extends Application implements HasSupportF
         return dispatchingActivityInjector;
     }
 
-            @Override
-            public AndroidInjector<Fragment> supportFragmentInjector() {
-                return dispatchingFragmentInjector;
-            }
-
-
-    /* @Override
-            public AndroidInjector<Fragment> supportFragmentInjector() {
-                return null;
-            }*/
+    @Override
+    public AndroidInjector<Fragment> supportFragmentInjector() {
+        return dispatchingFragmentInjector;
+    }
 
 }

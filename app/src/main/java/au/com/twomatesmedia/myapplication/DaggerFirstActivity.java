@@ -3,8 +3,6 @@ package au.com.twomatesmedia.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -14,17 +12,13 @@ import javax.inject.Inject;
 
 import au.com.twomatesmedia.myapplication.dummy.DummyContent;
 import dagger.android.AndroidInjection;
-import dagger.android.AndroidInjector;
-import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasFragmentInjector;
-import dagger.android.support.HasSupportFragmentInjector;
 
-public class DaggerTestActivity extends AppCompatActivity implements DaggerItemFragment.OnListFragmentInteractionListener {
+public class DaggerFirstActivity extends AppCompatActivity implements DaggerItemFragment.OnListFragmentInteractionListener {
 
 
     @Inject
    Book book;
-    private String TAG = DaggerTestActivity.class.getName();
+    private String TAG = DaggerFirstActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +34,7 @@ public class DaggerTestActivity extends AppCompatActivity implements DaggerItemF
             public void onClick(View view) {
                // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                //         .setAction("Action", null).show();
-                Intent intent = new Intent(getBaseContext(),DaggerTestSecondActivity.class);
+                Intent intent = new Intent(getBaseContext(),DaggerSecondActivity.class);
                 startActivity(intent);
 
 

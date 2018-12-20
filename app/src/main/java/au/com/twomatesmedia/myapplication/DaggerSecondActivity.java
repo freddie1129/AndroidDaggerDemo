@@ -12,11 +12,11 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
 
-public class DaggerTestSecondActivity extends AppCompatActivity {
+public class DaggerSecondActivity extends AppCompatActivity {
 
     @Inject
     Book book;
-    private String TAG = DaggerTestSecondActivity.class.getName();
+    private String TAG = DaggerSecondActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class DaggerTestSecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dagger_test_second);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,10 +33,7 @@ public class DaggerTestSecondActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         Log.d(TAG, "onCreate: " + book);
-
-
     }
 
 }

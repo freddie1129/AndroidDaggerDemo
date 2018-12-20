@@ -15,8 +15,6 @@ import au.com.twomatesmedia.myapplication.dummy.DummyContent;
 import au.com.twomatesmedia.myapplication.dummy.DummyContent.DummyItem;
 import dagger.android.support.AndroidSupportInjection;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 /**
@@ -77,7 +75,7 @@ public class DaggerItemFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyDaggerItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new ItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         Log.d(TAG, "onCreateView: " + book);
         return view;

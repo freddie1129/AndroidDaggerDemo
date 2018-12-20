@@ -13,10 +13,4 @@ public class MyModule {
         return new Book("The Great GateBe");
     }
 
-    @Provides
-    @Singleton
-    public static ItemFragment provide_itemFragment()
-    {
-        return ItemFragment.newInstance(1);
-    }
 }
